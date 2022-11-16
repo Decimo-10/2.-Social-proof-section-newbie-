@@ -19,8 +19,6 @@ body{
 .introduction{
     text-align: center;
 }
-/* Beljebb kezdődik mint a többi rész. Emiatt törik 3 sorba. Margó? 
-    Lecsekkolni miután az egész oldal körüli margó meg lett adva.*/
 .introduction__title{
     color: hsl(300, 43%, 22%);
 }
