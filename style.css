@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: url(fonts/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+html{
+    font-size: 100%;/* For accessibility. If 10px is given (for the easier calculation) the user can't change the font-size in the browser settings. */
+    font-family: "League Spartan", Arial, Helvetica, sans-serif;
+}
+
+body{
+    padding: 15px;
+    background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    font-size: 0.9375rem;/* 15px if base is 16px. */
+}
+/* ------------ */
+.introduction{
+    text-align: center;
+}
+/* Beljebb kezdődik mint a többi rész. Emiatt törik 3 sorba. Margó? 
+    Lecsekkolni miután az egész oldal körüli margó meg lett adva.*/
+.introduction__title{
+    color: hsl(300, 43%, 22%);
+}
+.introduction__text{
+    color: hsl(303, 10%, 53%);
+}
+/* ---------- */
+.five-stars-review-wrapper{
+    margin-block-start: 32px;
+    margin-block-end: 32px;
+}
+.five-stars-review{
+    max-width: 400px;
+    margin: auto;/* To keep the "centered" look even after the screen gets wider than it's max-width but before the media query is active. */
+    margin-block-start: 16px;
+    padding: 10px;
+    text-align: center;
+    background-color: hsl(300, 24%, 96%);
+    border-radius: 5px;
+    
+}
+.five-stars-review__text{
+    font-weight: 700;
+    color: hsl(300, 43%, 22%);
+    margin: 0;
+    margin-block-start: 8px;
+}
+/* ------------ */
+.named-reviews-wrapper{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    justify-items:center;/* To keep the "centered" look even after the screen gets wider than it's max-width but before the media query is active. */
+    
+}
+.named-review{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    max-width: 350px;
+    padding: 30px;
+    border-radius: 10px;
+    
+    background-color: hsl(300, 43%, 22%);
+}
+.named-review__img{
+    max-width: 40px;
+    border-radius: 50%;
+}
+.named-review__name{
+    margin: 0;
+    margin-block-end: 2px;
+    color: hsl(0, 0%, 100%);
+    font-weight: 500;
+}
+.named-review__status{
+    margin:0;
+    color: hsl(333, 80%, 67%);
+}
+.named-review__opinion{
+    grid-column: span 2;
+    margin-block-end: 0;
+    color: hsl(0, 0%, 100%);
+    line-height: 1.5;
+}
+
+@media (min-width: 1440px){
+    body{
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom right;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: auto 250px;
+        gap: 75px 0;
+        margin: 125px;
+    }
+    /* ------------ */
+    .introduction__title{
+        margin-block-end: 25px;
+        font-size: 4rem;
+        line-height: 47px;
+        text-align: left;
+    }
+    .introduction__text{
+        text-align: left;
+    }
+    /* ------------ */
+    .five-stars-review-wrapper{
+        margin: 0;
+        justify-self: end;
+        align-self: end;
+    }
+    .five-stars-review{
+        width: 400px;
+        display: flex;
+        margin: initial;
+        padding: 15px 0;
+    }
+    .five-stars-review__stars{
+        margin: 0 20px;
+    }
+    .five-stars-review--top{
+        position: relative;
+        right: 100px;
+    }
+    .five-stars-review--middle{
+        position: relative;
+        right: 50px;
+        margin-block-start: 16px;
+        margin-block-end: 16px;
+    }
+    .five-stars-review__text{
+        margin-block-start: 0;
+    }
+    /* ------------ */
+    .named-reviews-wrapper{
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .named-review--top{
+        align-self: start;
+    }
+    .named-review--middle{
+        align-self: center;
+    }
+    .named-review--bottom{
+        align-self: end;
+    }
+}
